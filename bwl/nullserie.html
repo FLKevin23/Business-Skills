@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BWL Nullserie | Prüfungssimulation</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../js/site.js"></script>
+<script src="../js/quiz.js"></script>
+</head>
+<body data-base="../" data-page="pruefungen">
+
+<div class="page-hero exam">
+  <h1>🏁 BWL Nullserie: Modulprüfung zum Üben</h1>
+  <p>Original-Nullserie «Fall Camille Bloch», 7 Aufgaben, 100 Punkte, 120 Minuten, Hilfsmittel: Taschenrechner. Lösungen aus der offiziellen Musterlösung, mit Erklärungen ergänzt.</p>
+  <div class="hero-meta"><span>📅 Modulprüfung: Mi 16.12., 11:30</span><span>🎯 Ziel: 80+ Punkte</span><span><a href="../pdfs/bwl-nullserie-aufgabe.pdf" target="_blank" style="color:#fff">Original (PDF)</a></span><span><a href="../pdfs/bwl-nullserie-loesung.pdf" target="_blank" style="color:#fff">Lösung (PDF)</a></span></div>
+</div>
+
+<div class="container">
+
+  <div class="section-block">
+    <div class="block-header bwl">📰 Ausgangslage: Fall Camille Bloch (Kurzfassung)</div>
+    <div class="block-body">
+      <p>Interview der Handelszeitung mit Chef <b>Daniel Bloch</b>. Den vollen Text findest du im <a href="../pdfs/bwl-nullserie-aufgabe.pdf" target="_blank">Original-PDF</a>. Die Fakten, die du für die Aufgaben brauchst:</p>
+      <ul>
+        <li>Familienunternehmen, 1929 in Bern gegründet. Standort heute <b>Courtelary</b> (Berner Jura). Wichtigste Marke <b>Ragusa</b> (Haselnüsse statt Kakao, entstanden wegen Rohstoffknappheit im 2. Weltkrieg), zweite Marke <b>Torino</b>.</li>
+        <li><b>180 Mitarbeitende</b>, Umsatz <b>CHF 57 Mio.</b>, <b>divisional nach Profit-Centern</b> organisiert. Patronaler Führungsstil.</li>
+        <li>Seit 2004 rund <b>50 % Wachstum</b> im gesättigten Schweizer Markt, nur durch <b>Innovationen und neue Produkte</b> (z.B. Ragusa noir: dunkle Schokolade, Anteil am Absatz von 10 auf 20 %, Premium- und Gesundheitsimage).</li>
+        <li>Importquote hat sich in 20 Jahren auf über 30 % verdreifacht; <b>starker Franken</b> macht europäische Schokolade billiger; Export wird schwieriger. Der Bundesrat hat den <b>Rohstoffpreisausgleich</b> gekürzt (Zahlung, damit Schweizer Hersteller trotz teurer Milch/Zucker im Ausland konkurrenzfähig sind).</li>
+        <li>Gegen Preisdruck: näher zum Konsumenten, <b>grösseres Markenerlebnis</b>, Qualität überzeugen → Markentreue.</li>
+        <li>Kakao wird teurer; Risiko, dass afrikanische Bauern in besser bezahlte Branchen wechseln. Rezepturen werden nicht aus Kostengründen geändert. Regelmässig Übernahmeangebote.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="examtip">Gehe es wie an der Prüfung an: Timer läuft, erst alles beantworten, dann «Abgeben». Bei offenen Fragen danach ehrlich selbst bewerten. Aufgaben mit 📅 behandeln Stoff, der erst später im Unterricht kommt. Du kannst sie überspringen (0 Punkte) und später wiederholen.</div>
+
+  <div id="exam"></div>
+</div>
+
+<script>
+Quiz.mount('#exam', {
+  id: 'bwl-null', title: 'BWL Nullserie · 100 Punkte', exam: true, minutes: 120,
+  questions: [
+    { num: 'Aufgabe 1', type: 'tf', pts: 10, q: 'Grundzüge der Betriebswirtschaft: Stimmen die Aussagen zu Camille Bloch?', items: [
+      { s: '«Gesättigter Markt» bedeutet, dass sich der Marktanteil mengen- oder wertmässig dem Marktvolumen nähert.', a: false, why: 'Gesättigt = das <b>Marktvolumen</b> (tatsächlicher Absatz aller Anbieter) nähert sich dem <b>Marktpotenzial</b> (maximal möglicher Absatz).' },
+      { s: 'Camille Bloch konnte im gesättigten Markt vor allem durch intensive Werbung, Rationalisierungen und Übernahmen wachsen.', a: false, why: 'Laut Interview nur durch Innovationen und neue Produkte.' },
+      { s: 'Der Rohstoffausgleich ist eine Subvention.', a: true, why: 'Staatliche Zahlung zur Unterstützung der Exporteure.' },
+      { s: 'Camille Bloch zählt zur Kategorie der Mittelbetriebe.', a: true, why: '180 Mitarbeitende = 50 bis 249.' },
+      { s: 'Um dem Preisdruck zu begegnen, strebt Camille Bloch die Kostenführerschaft an.', a: false, why: 'Sie setzen auf Markenerlebnis und Qualität = Differenzierung, nicht billigster Anbieter.' },
+      { s: 'Länderstrategie und Organigramm weiterentwickeln gehört im St. Galler Management-Modell zur Dimension Entwicklungsmodi.', a: false, why: 'Strategie und Struktur = Ordnungsmomente.' },
+      { s: 'Schokolade ist für einen Restaurateur ein Investitionsgut, weil er daraus Mousse au Chocolat herstellt.', a: false, why: 'Investitionsgüter werden mehrfach zur Produktion genutzt (Herd, Mixer). Schokolade wird verbraucht.' },
+      { s: 'Der Standort eines produzierenden Betriebes in der Schokoladenbranche kann heute von hoher Bedeutung sein.', a: true, why: 'Rohstoffe, Arbeitskräfte, Transport, Swissness.' },
+      { s: 'Grösseres Markenerlebnis, Qualitätsprodukte und Umsatzziele stehen im leistungswirtschaftlichen Konzept.', a: true, why: 'Markt, Produkte, Umsatz = leistungswirtschaftlich.' },
+      { s: 'USD 60 pro Tonne Kakao in die Ausbildung der Bauern in Ghana zu investieren, schliesst ein strategisches Risiko aus.', a: false, why: 'Es <b>vermindert</b> das Risiko, schliesst es aber nicht aus.' }
+    ] },
+    { num: 'Aufgabe 2.1', type: 'open', pts: 6, later: 'Organisation: Kap. 11, BWL KE3 (04.11.)', q: 'Die Stelle wird durch Aufgaben, Kompetenzen und Verantwortung bestimmt. Was ist unter diesen drei Begriffen zu verstehen?',
+      model: '<b>Aufgaben:</b> die Verpflichtung, eine an den Unternehmenszielen orientierte Tätigkeit auszuüben.<br><b>Kompetenzen:</b> das Recht, eigenverantwortlich zu handeln; bei Instanzen (Vorgesetzten) auch die Befugnis, Unterstellten Anordnungen zu geben.<br><b>Verantwortung:</b> die Pflicht, sich gegenüber einer Instanz für seine Handlungen zu rechtfertigen.<br><i>Merke das Kongruenzprinzip: Aufgaben, Kompetenzen und Verantwortung müssen übereinstimmen («AKV»).</i>' },
+    { num: 'Aufgabe 2.2', type: 'open', pts: 4, later: 'Kap. 11, BWL KE3', q: 'Erklären Sie in max. zwei Sätzen, was eine Profit-Center-Organisation ist (zwei Eigenschaften).',
+      model: 'Die Abteilungen werden nach den angebotenen Produkten/Dienstleistungen gebildet (2 P.). Jede Abteilung ist unter Einhaltung gewisser Rahmenbedingungen selbst für ihren Erfolg (Gewinn) verantwortlich (2 P.).' },
+    { num: 'Aufgabe 2.3', type: 'open', pts: 4, later: 'Kap. 11, BWL KE3', q: 'Nennen Sie je zwei Vor- und Nachteile der Profit-Center-Organisation.',
+      model: '<b>Vorteile:</b> Unternehmen besser steuerbar; grosses Verantwortungsgefühl der Spartenleiter, dadurch hohe Effizienz; hohe Flexibilität durch kurze Wege; Nähe zum Markt.<br><b>Nachteile:</b> Abgrenzungsprobleme, Doppelspurigkeiten; Rivalität statt Kooperation; hoher Bedarf an qualifizierten Führungskräften; schwierig, alle auf eine gemeinsame Philosophie auszurichten.' },
+    { num: 'Aufgabe 2.4', type: 'open', pts: 2, later: 'Kap. 11, BWL KE3', q: 'Erklären Sie in einem Satz Leitungstiefe und Kontrollspanne.',
+      model: '<b>Leitungstiefe:</b> Anzahl hierarchischer Ebenen im Organigramm. <b>Kontrollspanne:</b> Anzahl Mitarbeitende, die einem Vorgesetzten direkt unterstellt sind.' },
+    { num: 'Aufgabe 3.1', type: 'open', pts: 10, q: 'Nennen Sie zwei relevante Umweltsphären und beschreiben Sie je zwei wichtige Trends für Camille Bloch.', hint: '1 P. pro Sphäre, 2 P. pro konkretem Trend',
+      model: '<b>Gesellschaft:</b> 1) Demografie: Menschen leben länger, mehr kinderlose Haushalte mit gutem Einkommen, Kleinfamilien; steigendes Gesundheitsbewusstsein. 2) Convenience und neue Geschmackserlebnisse (dunkle Schokolade, Chili, Fleur de Sel), Fairtrade und nachhaltige Zutaten.<br><b>Wirtschaft:</b> 1) Starker Franken, Euro- und Schuldenkrise erschweren den Export; Konjunktureinbruch senkt den Konsum. 2) Schärferer Wettbewerb und Preisdruck durch ausländische Anbieter mit tieferen Kosten; Kürzung/Wegfall des Rohstoffausgleichs.<br><i>Auch möglich: Natur (Kakaoknappheit, Klima) oder Technologie.</i>' },
+    { num: 'Aufgabe 3.2', type: 'open', pts: 6, q: 'Leiten Sie aus Ihrer Analyse zwei Massnahmen ab, welche die Marktposition stärken.',
+      model: '1) Neue Produkte für neue Kundensegmente: neue Geschmacksrichtungen, Packungsgrössen für kleinere Haushalte, Convenience-/Functional-Food (gesunder Riegel für unterwegs, leicht zu öffnen).<br>2) Neue geografische Märkte erschliessen (z.B. Asien, Lateinamerika, Afrika).<br><i>Wichtig: Die Massnahme muss zu einem Trend aus 3.1 passen.</i>' },
+    { num: 'Aufgabe 3.3', type: 'open', pts: 9, q: 'Zählen Sie drei wichtige Anspruchsgruppen auf. Welche Ziele könnten diese haben?', hint: '1 P. Gruppe + 2 P. Ziel',
+      model: '<b>Kunden:</b> weiterhin ihre Lieblingsschokolade in verschiedenen Formen, Grössen und Geschmacksrichtungen kaufen.<br><b>Mitarbeitende:</b> Arbeitsplätze im Berner Jura bleiben erhalten, Firma wächst, patronaler Führungsstil bleibt.<br><b>Kapitalgeber:</b> Rendite steht an erster Stelle, maximale Verzinsung des Kapitals.' },
+    { num: 'Aufgabe 3.4', type: 'open', pts: 4, q: 'Beschreiben Sie einen Zielkonflikt zwischen zwei Anspruchsgruppen genau.',
+      model: '<b>Kapitalgeber ↔ Unternehmensleitung:</b> Die Kapitalgeber wollen vor allem Rendite. Patron Daniel Bloch will das Unternehmen fortführen, in Innovation, Qualität, Image und neue Märkte investieren und Arbeitsplätze erhalten. Investitionen und Arbeitsplatzerhalt drücken kurzfristig die Rendite.<br>Oder: <b>Lieferanten ↔ Camille Bloch:</b> Lieferanten wollen hohe Preise, Bloch will tiefe Einkaufspreise, weil sie die Marge betreffen.' },
+    { num: 'Aufgabe 4.1', type: 'open', pts: 4, q: 'Nennen Sie zwei konkrete finanzwirtschaftliche Ziele für Camille Bloch.', hint: 'Inhalt + Ausmass + Zeit',
+      model: '1) Eigenkapitalrentabilität in den nächsten drei Jahren von 10 % auf 12 % erhöhen.<br>2) Zahlungsbereitschaft jederzeit sichern: Liquiditätsreserven für die kommenden 6 Monate.' },
+    { num: 'Aufgabe 4.2', type: 'open', pts: 4, q: 'Nennen Sie zwei konkrete leistungswirtschaftliche Ziele für Camille Bloch.',
+      model: '1) Gestützten Bekanntheitsgrad von Ragusa in drei Jahren von 70 % auf 85 % erhöhen.<br>2) In den nächsten drei Jahren jährlich mindestens zwei Innovationen erfolgreich im Markt platzieren (in den Regalen der Hauptabnehmer).' },
+    { num: 'Aufgabe 5.1', type: 'open', pts: 2, later: 'Marketing: Kap. 13, BWL KE6 (02.12.)', q: 'Worum geht es bei der AIDA-Formel?',
+      model: 'Ein Wirkungsmodell der Werbung: Es beschreibt die Stufen, die ein Kunde bis zum Kauf durchläuft, und wird eingesetzt, um ein Produkt oder eine Dienstleistung wirksam anzukündigen.' },
+    { num: 'Aufgabe 5.2', type: 'open', pts: 6, later: 'Kap. 13, BWL KE6', q: 'Formulieren Sie AIDA aus (Deutsch + Englisch) mit je einem Beispiel für die Verpackung einer Camille-Bloch-Schokolade.',
+      model: '<b>A</b> Aufmerksamkeit / Attention: auffälliges Bild auf der Verpackung als Blickfang.<br><b>I</b> Interesse / Interest: wertvolle Information, z.B. «weniger Kalorien», «Swiss Made seit 1929».<br><b>D</b> Wunsch / Desire: Emotionen wecken (Genuss, Tradition).<br><b>A</b> Aktion / Action: zum Kauf bewegen, z.B. Hinweis auf Gratis-Fabrikbesichtigung, Aktion.' },
+    { num: 'Aufgabe 6.1', type: 'open', pts: 4, later: 'Kap. 13, BWL KE6', q: 'Erläutern Sie die Begriffe «Marktanteil» und «Marktwachstum» (Portfolio-Analyse).',
+      model: '<b>Marktanteil</b> = eigener Umsatz / Gesamtumsatz der Branche. <b>Relativer Marktanteil</b> = eigener Umsatz / Umsatz des stärksten Konkurrenten.<br><b>Marktwachstum</b> = das Marktvolumen vergrössert sich: Es wird mehr konsumiert oder es kommen mehr Kunden auf den Markt.' },
+    { num: 'Aufgabe 6.2', type: 'open', pts: 12, later: 'Kap. 13, BWL KE6', q: 'Nennen Sie die vier Felder der Portfolio-Matrix, skizzieren Sie sie und erläutern Sie die Normstrategie je Feld.', hint: 'Begriff je 1 P., Strategie je 2 P.',
+      model: 'Achsen: x = relativer Marktanteil, y = Marktwachstum.<br><b>Stars</b> (hoher Anteil, hohes Wachstum): Investitionsstrategie (Werbung, Maschinen, Personal).<br><b>Cash Cows</b> (hoher Anteil, tiefes Wachstum): Abschöpfungsstrategie, keine zusätzlichen Investitionen, Geld in Stars stecken.<br><b>Poor Dogs</b> (tiefer Anteil, tiefes Wachstum): Desinvestition, verkaufen oder aussteigen.<br><b>Question Marks</b> (tiefer Anteil, hohes Wachstum): investieren oder desinvestieren: beobachten, dann entscheiden.' },
+    { num: 'Aufgabe 7.1', type: 'mc', pts: 1, q: 'Für das ökonomische Prinzip gilt:', opts: ['Ich will mit möglichst wenig Geld möglichst viele Bedürfnisse befriedigen.', 'Aufwand und Ertrag sind immer gleich gross.', 'Das Verhältnis Aufwand/Ertrag ist nur bei Investitionsgütern wichtig.', 'Investitionsgüter befriedigen immer die Bedürfnisse aller Menschen im Land.'], a: [0] },
+    { num: 'Aufgabe 7.2', type: 'mc', pts: 4, q: 'Welche Aussagen sind richtig?', opts: ['Die Unternehmungen benötigen die Produktionsfaktoren, um neue Sachgüter und Dienstleistungen herzustellen.', 'Weil Unternehmen mit den Produktionsfaktoren Güter herstellen, nennt man diese auch Investitionsgüter.', 'Eine Volkswirtschaft ist im Gleichgewicht, wenn der Güter- dem Geldstrom entspricht. In der Realität herrscht dieses Gleichgewicht.', 'Die Konsumenten erhalten für ihre Arbeit Lohn und können damit Sachgüter und Dienstleistungen erwerben.'], a: [0, 3], why: 'Produktionsfaktoren ≠ Investitionsgüter. Das Gleichgewicht ist ein Modell, in der Realität herrscht es nicht.' },
+    { num: 'Aufgabe 7.3', type: 'match', pts: 5, q: 'Ordnen Sie die Betriebe dem Wirtschaftssektor zu.', choices: ['primär', 'sekundär', 'tertiär'], items: [
+      { s: '1) Versicherungen', a: 'tertiär' }, { s: '2) Goldschmied', a: 'sekundär' }, { s: '3) Zahnarzt', a: 'tertiär' }, { s: '4) Fischerei', a: 'primär' }, { s: '5) Obstplantagen', a: 'primär' },
+      { s: '6) Heiratsvermittlungsinstitute', a: 'tertiär' }, { s: '7) Textilindustrie', a: 'sekundär' }, { s: '8) Erdölförderung', a: 'primär' }, { s: '9) Forstarbeiter', a: 'primär' }, { s: '10) Schreinerei', a: 'sekundär' }
+    ] },
+    { num: 'Aufgabe 7.4', type: 'open', pts: 3, q: 'Beschreiben Sie je drei Vor- und Nachteile der Aktiengesellschaft.',
+      model: '<b>Vorteile:</b> Haftung nur mit dem Gesellschaftsvermögen (Achtung: VR/GL können bei Fahrlässigkeit persönlich haften); Besitzverhältnisse nicht öffentlich, Firma leichter verkaufbar; mitarbeitende Aktionäre sind angestellt und sozialversichert; Firmenname frei wählbar; Einfluss der Gründer sicherbar (Stimmrechtsaktien, Vinkulierung).<br><b>Nachteile:</b> Mindestkapital CHF 100\'000; aufwändige, teure Gründung; Doppelbesteuerung (Gewinn/Kapital der AG + Dividende/Vermögen der Aktionäre); strenge Bilanzierungsvorschriften; hoher Verwaltungsaufwand (GV, Protokolle, Revision).' }
+  ]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karteikarten | Business Skills</title>
+<link rel="stylesheet" href="style.css">
+<script src="js/site.js"></script>
+<script src="js/cards.js"></script>
+</head>
+<body data-base="" data-page="karten">
+
+<div class="page-hero">
+  <h1>🃏 Karteikarten mit Wiederholungssystem</h1>
+  <p>5 bis 10 Minuten pro Tag. Was du weisst, kommt später wieder (1, 2, 4, 8, 16 Tage). Was du nicht weisst, kommt heute nochmals. So bleibt der Stoff mit minimalem Aufwand bis zur Prüfung hängen.</p>
+</div>
+
+<div class="container fc-wrap">
+  <div class="fc-filters">
+    <select id="f-subj"><option value="all">BWL + Recht</option><option value="bwl">nur BWL</option><option value="recht">nur Recht</option></select>
+    <select id="f-ke"><option value="all">alle KE</option></select>
+    <select id="f-mode"><option value="due">fällige Karten</option><option value="all">alle (Prüfungs-Sprint)</option></select>
+    <button class="btn" id="restart">Neu mischen</button>
+  </div>
+
+  <div id="card" class="fc"></div>
+  <div class="fc-btns" id="rate" style="display:none">
+    <button class="btn red" data-r="0">✗ Nicht gewusst <small>(1)</small></button>
+    <button class="btn orange" data-r="1">~ Unsicher <small>(2)</small></button>
+    <button class="btn green" data-r="2">✓ Gewusst <small>(3)</small></button>
+  </div>
+  <div class="fc-stats" id="stats"></div>
+  <p class="src" style="text-align:center;margin-top:10px">Tastatur: Leertaste = umdrehen · 1 / 2 / 3 = bewerten</p>
+</div>
+
+<script>
+const INTERVALS = [0, 1, 2, 4, 8, 16];
+let state = Store.get('cards', {});
+let queue = [], cur = null, doneToday = 0;
+
+const keSel = document.getElementById('f-ke');
+[...new Set(CARDS.map(c => c.s + '|' + c.ke))].forEach(k => {
+  const [s, ke] = k.split('|');
+  keSel.insertAdjacentHTML('beforeend', '<option value="' + k + '">' + (s === 'bwl' ? 'BWL' : 'Recht') + ' KE' + ke + '</option>');
+});
+
+function addDays(n) { const d = new Date(); d.setDate(d.getDate() + n); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+function info(c) { return state[c.id] || { box: 0, due: todayISO() }; }
+
+function build() {
+  const subj = document.getElementById('f-subj').value, ke = keSel.value, mode = document.getElementById('f-mode').value;
+  queue = CARDS.filter(c => (subj === 'all' || c.s === subj) && (ke === 'all' || (c.s + '|' + c.ke) === ke) && (mode === 'all' || info(c).due <= todayISO()));
+  queue.sort(() => Math.random() - .5);
+  next();
+}
+
+function next() {
+  const el = document.getElementById('card');
+  cur = queue.shift();
+  document.getElementById('rate').style.display = 'none';
+  el.classList.remove('flipped');
+  if (!cur) {
+    el.innerHTML = '<div class="front">🎉 Fertig für heute</div><p class="src">' + doneToday + ' Karten geübt. Morgen kommen die nächsten fälligen Karten. Für einen Prüfungs-Sprint oben «alle» wählen.</p>';
+    stats(); return;
+  }
+  el.innerHTML = '<div class="meta">' + (cur.s === 'bwl' ? 'BWL' : 'Recht') + ' · KE' + cur.ke + ' · Box ' + info(cur).box + '</div><div class="front">' + cur.f + '</div><div class="back">' + cur.b + '</div><p class="src" style="margin-top:14px">Erst selbst antworten (laut oder im Kopf), dann klicken.</p>';
+  stats();
+}
+
+function flip() {
+  if (!cur) return;
+  document.getElementById('card').classList.add('flipped');
+  document.getElementById('rate').style.display = 'grid';
+}
+
+function rate(r) {
+  if (!cur || !document.getElementById('card').classList.contains('flipped')) return;
+  const i = info(cur);
+  let box = i.box;
+  if (r === 0) { box = 1; queue.splice(Math.min(3, queue.length), 0, cur); }
+  else if (r === 2) box = Math.min(5, box + 1);
+  else box = Math.max(1, box);
+  state[cur.id] = { box, due: r === 0 ? todayISO() : addDays(r === 1 ? 1 : INTERVALS[box]) };
+  Store.set('cards', state);
+  doneToday++;
+  next();
+}
+
+function stats() {
+  const due = CARDS.filter(c => info(c).due <= todayISO()).length;
+  const boxes = [0, 0, 0, 0, 0, 0];
+  CARDS.forEach(c => boxes[info(c).box]++);
+  document.getElementById('stats').innerHTML = '<span>Heute fällig: ' + due + '</span><span>In dieser Runde übrig: ' + (queue.length + (cur ? 1 : 0)) + '</span>' +
+    '<span>Neu: ' + boxes[0] + '</span><span>Box 1 bis 2: ' + (boxes[1] + boxes[2]) + '</span><span>Box 3 bis 4: ' + (boxes[3] + boxes[4]) + '</span><span>Sitzt (Box 5): ' + boxes[5] + '</span>';
+}
+
+document.getElementById('card').onclick = flip;
+document.querySelectorAll('#rate button').forEach(b => b.onclick = () => rate(+b.dataset.r));
+['f-subj', 'f-ke', 'f-mode'].forEach(id => document.getElementById(id).onchange = build);
+document.getElementById('restart').onclick = build;
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'SELECT') return;
+  if (e.code === 'Space') { e.preventDefault(); flip(); }
+  if (['1', '2', '3'].includes(e.key)) rate(+e.key - 1);
+});
+build();
+</script>
+</body>
+</html>

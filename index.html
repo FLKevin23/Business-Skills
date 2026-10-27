@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Skills Lernhub</title>
+<link rel="stylesheet" href="style.css">
+<script src="js/site.js"></script>
+<script src="js/cards.js"></script>
+</head>
+<body data-base="" data-page="home">
+
+<div class="page-hero">
+  <h1>Business Skills Lernhub</h1>
+  <p>Handelsdiplom VSH · BVS St. Gallen · Business Skills I (BWL) & II (Recht) · Ziel: 80+ Punkte mit möglichst wenig Zeitaufwand</p>
+</div>
+
+<div class="container">
+
+  <div class="countdowns" id="countdowns"></div>
+
+  <div class="section-heading">✅ Bis zur nächsten Lektion</div>
+  <div class="checklist" id="prep"></div>
+
+  <div class="section-heading">📚 Lernen</div>
+  <div class="grid">
+    <a class="card bwl" href="bwl/ke1.html"><span class="kicker">BWL · KE1 · 21.10. · verpasst</span><h3>Umwelt & Gliederung der Betriebe</h3><p>Umweltsphären, Anspruchsgruppen, Zielkonflikte, Sektoren, Grösse, Trägerschaft, Rechtsformen.</p><div class="links"><span class="tag">Kap. 1 & 2</span><span class="tag exam">ZP 04.11.</span><span class="tag" data-q="bwl-ke1"></span></div></a>
+    <a class="card bwl" href="bwl/ke2.html"><span class="kicker">BWL · KE2 · 28.10.</span><h3>Leitbild, Konzept, Bedürfnisse, Güter</h3><p>Strategie, Leitbild vs. Grundstrategie, Unternehmenskonzept, Maslow, Bedarf, Güterarten.</p><div class="links"><span class="tag">Kap. 3 & 4</span><span class="tag exam">ZP 04.11.</span><span class="tag" data-q="bwl-ke2"></span></div></a>
+    <a class="card recht" href="recht/ke1.html"><span class="kicker">Recht · KE1 · 21.10. · verpasst</span><h3>Grundlagen, Obligationen, Haftpflicht</h3><p>Brauch/Sitte/Recht/Moral, Rechtsquellen, öffentlich/privat, OR 41, Kausalhaftung.</p><div class="links"><span class="tag">Kap. 14</span><span class="tag exam">ZP 18.11.</span><span class="tag" data-q="recht-ke1"></span></div></a>
+    <a class="card recht" href="recht/vorschau.html"><span class="kicker">Recht · KE2 bis 4 · Vorschau</span><h3>Vertragslehre & Kaufvertrag</h3><p>Antrag/Annahme, Form, Handlungsfähigkeit, nichtig/anfechtbar, Verzug, Mängelrüge.</p><div class="links"><span class="tag">Kap. 15 & 16</span><span class="tag later">wird nach der Lektion ergänzt</span></div></a>
+    <a class="card" href="karten.html"><span class="kicker">Täglich 5 bis 10 Min.</span><h3>🃏 Karteikarten</h3><p id="card-stat">Wiederholungssystem: Was sitzt, kommt seltener.</p></a>
+    <a class="card exam" href="pruefungen.html"><span class="kicker">Prüfungen simulieren</span><h3>📝 Probe-ZP & Nullserien</h3><p>Mit Timer, automatischer Korrektur und Musterlösungen.</p></a>
+  </div>
+
+  <div class="section-heading">🎯 Dein 80+ System (ca. 2 bis 2.5 Std. pro Woche)</div>
+  <div class="section-block"><div class="block-body">
+    <div class="table-wrap"><table>
+      <tr><th>Wann</th><th>Was</th><th>Zeit</th><th>Warum</th></tr>
+      <tr><td><b>Vor der Lektion</b></td><td>Seite der kommenden KE überfliegen: nur Kernsätze 🎯 und Überschriften</td><td>10 Min.</td><td>Im Unterricht verknüpfst du statt neu aufzunehmen. Deine Fragen werden besser.</td></tr>
+      <tr><td><b>In der Lektion</b></td><td>Aufpassen, fragen, Übungen mitmachen</td><td>-</td><td>Das bringt dir laut eigener Erfahrung schon das Bestehen.</td></tr>
+      <tr><td><b>Am Tag danach</b></td><td>Check-Quiz der KE (ohne Spicken), Fehler nachlesen</td><td>15 Min.</td><td>Abrufen am nächsten Tag ist der stärkste Gedächtnis-Booster.</td></tr>
+      <tr><td><b>Täglich</b></td><td>Karteikarten, nur fällige</td><td>5 bis 10 Min.</td><td>Verteilte Wiederholung: wenig Zeit, langfristig im Kopf.</td></tr>
+      <tr><td><b>Woche vor ZP / Prüfung</b></td><td>Probe-Prüfung mit Timer → Fehler repetieren → nochmals</td><td>2 × 60 Min.</td><td>Prüfungsformat trainieren: «konkret», «mit Artikel», «genau beschreiben».</td></tr>
+    </table></div>
+    <p class="src">Recht-Extra: Das Gesetzbuch ist an der Prüfung erlaubt, mit Seiten-Reitern und handschriftlichen Artikel-Verweisen. Trag jede Woche die Artikel aus der Lektion ein: Das spart dir an der Prüfung Minuten pro Aufgabe.</p>
+  </div></div>
+
+  <div class="section-heading">📅 Semesterplan</div>
+  <div class="timeline" id="timeline"></div>
+
+  <div class="section-heading">📈 Fortschritt</div>
+  <div class="grid" id="progress"></div>
+
+</div>
+
+<script>
+/* What to do before each class date. Keys = class date. */
+const PREP = {
+  '2026-10-28': [
+    'BWL KE1 durcharbeiten (verpasste Lektion), Check machen: <a href="bwl/ke1.html">öffnen</a> · 35 Min.',
+    'Recht KE1 durcharbeiten (verpasste Lektion), Check machen: <a href="recht/ke1.html">öffnen</a> · 40 Min.',
+    'BWL KE2 Kernsätze überfliegen (Lektion morgen 08:30): <a href="bwl/ke2.html">öffnen</a> · 10 Min.',
+    'Recht Vorschau Vertragslehre überfliegen (Lektion morgen 12:30): <a href="recht/vorschau.html">öffnen</a> · 10 Min.',
+    'OR/ZGB (kaufm. Ausgabe) und Lehrmittel einpacken',
+    'Im Unterricht fragen: Wie und wo findet die BWL-ZP am 04.11. statt (OpenOlat oder Papier)? Wie viele Punkte, wie lange?',
+    'Karteikarten 10 Min.: <a href="karten.html">öffnen</a>'
+  ],
+  '2026-11-04': [
+    'BWL KE2 Check machen (Tag nach der Lektion): <a href="bwl/ke2.html#check">öffnen</a>',
+    'BWL Hausaufgabe: Lehrmittel S. 38 bis 41 + LearningApps',
+    'Recht Repetitionsfragen Lehrmittel S. 12, 24, 31, 39 f., 47',
+    'Neue Folien (BWL KE2 Lösungen, Recht KE2) von OpenOlat herunterladen, damit die Seiten ergänzt werden',
+    'Karteikarten täglich BWL KE1 und KE2',
+    '<b>Probe-ZP BWL</b> mit Timer, Ziel 40/50: <a href="bwl/zp.html">öffnen</a>',
+    'Recht Vorschau Kaufvertrag überfliegen: <a href="recht/vorschau.html#ke3">öffnen</a>'
+  ]
+};
+
+function nextClassDate() { return (SCHEDULE.find(e => e.d >= todayISO()) || {}).d; }
+
+// Countdowns
+(function () {
+  const items = [];
+  const nd = nextClassDate();
+  if (nd) {
+    const evs = SCHEDULE.filter(e => e.d === nd);
+    items.push({ c: '', n: daysUntil(nd), l: 'Nächster Schultag', d: fmtDate(nd) + ' · ' + evs.map(e => (e.s === 'bwl' ? 'BWL' : 'Recht') + ' ' + (e.time || '')).join(' / ') });
+  }
+  [['bwl', 'ZP BWL', '2026-11-04'], ['recht', 'ZP Recht', '2026-11-18'], ['bwl', 'Modulprüfung BWL', '2026-12-16'], ['recht', 'Modulprüfung Recht', '2026-12-16']].forEach(x => {
+    if (daysUntil(x[2]) >= 0) items.push({ c: x[0], n: daysUntil(x[2]), l: x[1], d: fmtDate(x[2]) });
+  });
+  document.getElementById('countdowns').innerHTML = items.map(i => '<div class="cd ' + i.c + '"><div class="n">' + (i.n === 0 ? 'heute' : i.n === 1 ? 'morgen' : i.n + ' T.') + '</div><div class="l">' + i.l + '</div><div class="d">' + i.d + '</div></div>').join('');
+})();
+
+// Prep checklist
+(function () {
+  const nd = nextClassDate();
+  const list = PREP[nd];
+  const el = document.getElementById('prep');
+  if (!list) { el.innerHTML = '<p class="src">Für die nächste Lektion ist noch keine Checkliste hinterlegt. Grundregel: Seite der nächsten KE überfliegen, Karteikarten, Check der letzten KE.</p>'; return; }
+  const done = Store.get('prep.' + nd, []);
+  el.innerHTML = '<p class="src" style="margin-bottom:6px">Für ' + fmtDate(nd) + '</p>' + list.map((t, i) => '<label class="' + (done.includes(i) ? 'done' : '') + '"><input type="checkbox" data-i="' + i + '"' + (done.includes(i) ? ' checked' : '') + '> <span>' + t + '</span></label>').join('');
+  el.querySelectorAll('input').forEach(cb => cb.onchange = () => {
+    const d = Store.get('prep.' + nd, []).filter(x => x !== +cb.dataset.i);
+    if (cb.checked) d.push(+cb.dataset.i);
+    Store.set('prep.' + nd, d);
+    cb.closest('label').classList.toggle('done', cb.checked);
+  });
+})();
+
+// Timeline
+(function () {
+  const nd = nextClassDate();
+  document.getElementById('timeline').innerHTML = SCHEDULE.map(e => {
+    const cls = e.d < todayISO() ? 'past' : (e.d === nd ? 'next' : '');
+    const title = e.page ? '<a href="' + e.page + '">' + e.t + '</a>' : e.t;
+    return '<div class="tl-row ' + cls + '"><span class="date">' + fmtDate(e.d) + (e.time ? '<br><small style="font-weight:400">' + e.time + '</small>' : '') + '</span><span class="subj ' + e.s + '">' + (e.s === 'bwl' ? 'BWL' : 'RECHT') + ' ' + e.ke + '</span><span class="topic">' + (e.exam ? '📝 ' : '') + title + '<small>' + e.k + '</small></span><span class="st">' + (e.d < todayISO() ? '<span class="tag done">vorbei</span>' : e.d === nd ? '<span class="tag exam">als Nächstes</span>' : '') + '</span></div>';
+  }).join('');
+})();
+
+// Progress
+(function () {
+  document.getElementById('progress').innerHTML = QUIZZES.map(q => {
+    const r = Store.get('quiz.' + q.id, null);
+    const pct = r ? r.best : 0;
+    return '<a class="card ' + q.s + '" href="' + q.url + '"><span class="kicker">' + (q.s === 'bwl' ? 'BWL' : 'Recht') + '</span><h3 style="font-size:15px">' + q.t + '</h3><p>' + (r ? 'Bestes: ' + r.best + ' % · Letztes: ' + r.last + ' % (' + r.at + ')' : 'Noch nicht gemacht') + '</p><div class="progress"><div style="width:' + pct + '%;background:' + (pct >= 80 ? 'var(--green)' : 'var(--orange)') + '"></div></div></a>';
+  }).join('');
+  document.querySelectorAll('[data-q]').forEach(t => {
+    const r = Store.get('quiz.' + t.dataset.q, null);
+    if (r) { t.textContent = 'Check: ' + r.best + ' %'; t.className = 'tag ' + (r.best >= 80 ? 'done' : 'exam'); } else t.remove();
+  });
+  const st = Store.get('cards', {});
+  const due = CARDS.filter(c => (st[c.id] ? st[c.id].due : todayISO()) <= todayISO()).length;
+  const solid = CARDS.filter(c => st[c.id] && st[c.id].box >= 4).length;
+  document.getElementById('card-stat').textContent = CARDS.length + ' Karten · heute fällig: ' + due + ' · sitzen: ' + solid;
+})();
+</script>
+</body>
+</html>

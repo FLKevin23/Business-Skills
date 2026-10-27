@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recht Nullserie | Prüfungssimulation</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../js/site.js"></script>
+<script src="../js/quiz.js"></script>
+</head>
+<body data-base="../" data-page="pruefungen">
+
+<div class="page-hero exam">
+  <h1>🏁 Recht Nullserie: Modulprüfung zum Üben</h1>
+  <p>Original-Nullserie Business Skills 2 / Recht: 20 Aufgaben, 100 Punkte, 120 Minuten. Hilfsmittel: ZGB/OR. Lösungen aus der offiziellen Musterlösung, ergänzt mit Erklärungen.</p>
+  <div class="hero-meta"><span>📅 Modulprüfung: Mi 16.12., 08:30</span><span>🎯 Ziel: 80+ Punkte</span><span>📕 Gesetzbuch neben dich legen</span></div>
+</div>
+
+<div class="container">
+  <div class="examtip">Heute deckt der Unterricht erst die Aufgaben 1 bis 9, 14, 16 und 17 ab (≈ 47 Punkte). Aufgaben mit 📅 kommen in späteren Lektionen. Mach sie trotzdem einmal mit dem Gesetzbuch: Das Nachschlagen im OR ist genau die Fähigkeit, die an der Prüfung zählt.</div>
+  <div class="warn">Aufgabe 13: Die offizielle Lösung schreibt «Schadenersatz». Juristisch korrekt heisst es <b>Entschädigung (OR 336a)</b>, bis 6 Monatslöhne. Schreib an der Prüfung beides: «Entschädigung nach OR 336a».</div>
+  <div id="exam"></div>
+</div>
+
+<script>
+Quiz.mount('#exam', {
+  id: 'recht-null', title: 'Recht Nullserie · 100 Punkte', exam: true, minutes: 120,
+  questions: [
+    { num: 'Aufgabe 1', type: 'match', pts: 6, q: 'Markieren Sie die zutreffenden Merkmale.', choices: ['äusseres Verhalten', 'innere Einstellung', 'erzwingbar', 'nicht erzwingbar'], items: [
+      { s: 'Moral: Bezug', a: 'innere Einstellung' }, { s: 'Moral: Durchsetzung', a: 'nicht erzwingbar' },
+      { s: 'Recht: Bezug', a: 'äusseres Verhalten' }, { s: 'Recht: Durchsetzung', a: 'erzwingbar' },
+      { s: 'Sitte: Bezug', a: 'äusseres Verhalten' }, { s: 'Sitte: Durchsetzung', a: 'nicht erzwingbar' }
+    ] },
+    { num: 'Aufgabe 2', type: 'open', pts: 6, q: 'Formulieren Sie zu Moral, Sitte und Recht je ein konkretes Beispiel.',
+      model: '<b>Moral:</b> Ich akzeptiere die Meinung meiner Mitmenschen, ohne sie überzeugen zu wollen.<br><b>Sitte:</b> In der Schweiz gibt man sich zur Begrüssung die rechte Hand.<br><b>Recht:</b> Auf Schweizer Autobahnen gilt Höchstgeschwindigkeit 120 km/h.' },
+    { num: 'Aufgabe 3', type: 'open', pts: 4, q: 'Erklären Sie das Zusammenspiel von Moral und Sitte bei der Entwicklung von Rechtsnormen an einem konkreten Beispiel.',
+      model: 'Moral und Sitte beim Entsorgen von Abfällen haben sich so stark verändert, dass der Gesetzgeber ein Littering-Gesetz erlassen hat. Veränderungen von Moral und Sitte, die zu gesellschaftlichen Missständen führen, bilden die Grundlage neuer Gesetze (Littering, Raserdelikte, Steuerhinterziehung).' },
+    { num: 'Aufgabe 4', type: 'match', pts: 3, q: 'Rangordnung des geschriebenen Schweizer Rechts (oberste Stufe = 1).', choices: ['1', '2', '3'], items: [
+      { s: 'Gesetze', a: '2' }, { s: 'Verfassung', a: '1' }, { s: 'Verordnungen', a: '3' }
+    ] },
+    { num: 'Aufgabe 5', type: 'open', pts: 4, q: 'Erklären Sie den Begriff des Gewohnheitsrechts.',
+      model: 'Ungeschriebenes Recht, das auf einer langen, ununterbrochenen Übung beruht, die von der Bevölkerung als verbindlich anerkannt wird (allgemeine Rechtsüberzeugung). Fehlt eine gesetzliche Regel, verwendet das Gericht diese akzeptierten Regeln zur Urteilsfindung (Art. 1 Abs. 2 ZGB).' },
+    { num: 'Aufgabe 6', type: 'open', pts: 4, q: 'a) Wann wird auf die richterliche Rechtsfindung zurückgegriffen? b) Nach welchem Grundsatz urteilt der Richter nach «richterlichem Ermessen»?',
+      model: 'a) Wenn das Gericht weder nach geschriebenem Recht noch nach Gewohnheitsrecht urteilen kann (Gesetzeslücke). b) Nach <b>Recht und Billigkeit</b> (Art. 4 ZGB).' },
+    { num: 'Aufgabe 7', type: 'match', pts: 9, q: 'Privates oder öffentliches Recht?', choices: ['Privates Recht', 'Öffentliches Recht'], items: [
+      { s: 'Strafrecht', a: 'Öffentliches Recht' }, { s: 'Erbrecht', a: 'Privates Recht' }, { s: 'Allgemeine Rechtsgrundsätze', a: 'Privates Recht' },
+      { s: 'Strassenverkehrsgesetz', a: 'Öffentliches Recht' }, { s: 'Sachenrecht', a: 'Privates Recht' }, { s: 'Obligationenrecht', a: 'Privates Recht' },
+      { s: 'Verwaltungsrecht', a: 'Öffentliches Recht' }, { s: 'Personenrecht', a: 'Privates Recht' }, { s: 'Völkerrecht', a: 'Öffentliches Recht' }
+    ] },
+    { num: 'Aufgabe 8', type: 'open', pts: 2, q: 'Welche Parteien stehen sich im privaten bzw. im öffentlichen Recht gegenüber?',
+      model: '<b>Privates Recht:</b> Privatperson ↔ Privatperson (gleichgeordnet). <b>Öffentliches Recht:</b> Privatperson ↔ Staat (über-/untergeordnet).' },
+    { num: 'Aufgabe 9', type: 'open', pts: 4, q: 'Erklären Sie: a) Rechtssubjekte b) Rechtsobjekte',
+      model: 'a) Rechtssubjekte sind natürliche und juristische Personen (Träger von Rechten und Pflichten). b) Rechtsobjekte sind Dinge (Sachen, Rechte), über die im Recht verfügt wird.' },
+    { num: 'Aufgabe 10', type: 'match', pts: 8, later: 'Form: Recht KE2 (28.10.) und Kap. 17/18', q: 'Welche Formvorschrift gilt?', choices: ['Formfreiheit', 'Einfache Schriftlichkeit', 'Qualifizierte Schriftlichkeit', 'Öffentliche Beurkundung', 'Eintrag in öffentliches Register'], items: [
+      { s: 'Lehrvertrag', a: 'Qualifizierte Schriftlichkeit' }, { s: 'Einzelarbeitsvertrag einer 35-jährigen Kauffrau', a: 'Formfreiheit' },
+      { s: 'Konkurrenzverbot eines Kadermitarbeiters', a: 'Einfache Schriftlichkeit' }, { s: 'Mietvertrag Geschäftsräume', a: 'Formfreiheit' },
+      { s: 'Mietzinserhöhung einer Privatwohnung', a: 'Qualifizierte Schriftlichkeit' }, { s: 'Kauf einer Liegenschaft', a: 'Öffentliche Beurkundung' },
+      { s: 'Kauf eines Autos', a: 'Formfreiheit' }, { s: 'Entstehung einer juristischen Person', a: 'Eintrag in öffentliches Register' }
+    ], why: 'Lehrvertrag OR 344a · Konkurrenzverbot OR 340 · Mietzinserhöhung amtliches Formular OR 269d · Grundstückkauf OR 216.' },
+    { num: 'Aufgabe 11', type: 'open', pts: 6, later: 'Handlungsfähigkeit: Recht KE2', q: 'Peter (17, Lehrling) kauft mit CHF 600 gespartem Lehrlingslohn eine Playstation. Die Eltern verlangen, dass das Geschäft den Kauf rückgängig macht. Muss es? Begründung + Gesetzesartikel.',
+      model: 'Nein. Peter hat die Playstation mit selbst verdientem Geld gekauft. Über seinen Arbeitserwerb darf das Kind selbst verfügen, die Eltern können den Kauf nicht verbieten. <b>ZGB 323 Abs. 1</b>.' },
+    { num: 'Aufgabe 12', type: 'match', pts: 4, later: 'Vertragsmängel: Recht KE2', q: 'Welche Auswirkung auf den Vertrag?', choices: ['nichtig', 'anfechtbar', 'gültig'], items: [
+      { s: 'Inhalt verstösst gegen zwingende Vorschriften', a: 'nichtig' }, { s: 'Vertrag beruht auf einem Motivirrtum', a: 'gültig' },
+      { s: 'Vertrag unter Drohung entstanden', a: 'anfechtbar' }, { s: 'Vertrag verstösst gegen die guten Sitten', a: 'nichtig' }
+    ], why: 'OR 20 (nichtig) · OR 24 Abs. 2 (Motivirrtum unwesentlich) · OR 29/30 (Furchterregung).' },
+    { num: 'Aufgabe 13', type: 'open', pts: 6, later: 'Arbeitsvertrag: Recht KE5 (18.11.)', q: 'Hans wird gekündigt, weil er an einer Gewerkschaftsveranstaltung teilgenommen hat. a) Rechtslage? b) Gesetzesartikel? c) Begriff für diese Kündigung?',
+      model: 'a) Die Kündigung ist gültig (das Arbeitsverhältnis endet), aber Hans hat Anspruch auf eine Entschädigung (bis 6 Monatslöhne, OR 336a). Er muss bis Ende der Kündigungsfrist schriftlich Einsprache erheben (OR 336b). b) <b>OR 336 Abs. 2 lit. a</b>. c) <b>Missbräuchliche Kündigung</b>.' },
+    { num: 'Aufgabe 14', type: 'open', pts: 5, q: 'a) Nennen Sie die vier Tatbestandsmerkmale für Schadenersatz aus unerlaubter Handlung. b) Gesetzesartikel?',
+      model: 'a) Widerrechtlichkeit (Eingriff in ein geschütztes Rechtsgut) · Schaden (Vermögensminderung) · adäquater Kausalzusammenhang · Verschulden. b) <b>OR 41</b>.' },
+    { num: 'Aufgabe 15', type: 'open', pts: 6, later: 'Kaufvertrag: Recht KE3/4', q: 'Karl Müller erhält eine Lieferung. Welche drei Pflichten hat er, wenn er den Lieferanten für Mängel haftbar machen will?',
+      model: '1) Die Ware rasch prüfen. 2) Mängel sofort anzeigen (Mängelrüge). 3) Die Ware aufbewahren. (OR 201, 204)' },
+    { num: 'Aufgabe 16', type: 'open', pts: 3, q: 'Nennen Sie die drei Entstehungsgründe einer Obligation.',
+      model: 'Vertrag · unerlaubte Handlung · ungerechtfertigte Bereicherung.' },
+    { num: 'Aufgabe 17', type: 'open', pts: 6, q: 'Nennen Sie drei Arten der Kausalhaftung mit Gesetzesartikel.',
+      model: 'Haftung des Geschäftsherrn OR 55 · Haftung des Tierhalters OR 56 · Haftung des Werkeigentümers OR 58 · (Familienoberhaupt ZGB 333).' },
+    { num: 'Aufgabe 18', type: 'open', pts: 2, later: 'Kaufvertrag: Recht KE3', q: 'Was versteht man unter «kaufmännischem Verkehr»?',
+      model: 'Er liegt vor, wenn der Zweck des Kaufs der Wiederverkauf ist.' },
+    { num: 'Aufgabe 19', type: 'open', pts: 6, later: 'Arbeitsvertrag: Recht KE5', q: 'Max\' Arbeitsvertrag: Kündigungsfrist Arbeitnehmer 3 Monate, Arbeitgeber 1 Monat. Rechtslage + Gesetzesartikel?',
+      model: 'Die Regelung ist ungültig: Für Arbeitnehmer und Arbeitgeber dürfen keine verschiedenen Kündigungsfristen festgesetzt werden. Bei widersprechender Abrede gilt für beide die längere Frist (also 3 Monate). <b>OR 335a Abs. 1</b>.' },
+    { num: 'Aufgabe 20', type: 'open', pts: 6, later: 'Arbeitsvertrag: Recht KE5', q: 'Letzter Arbeitstag? a) Heike kündigt in der Probezeit am 30.06. persönlich. b) Jeannine kündigt nach 15 Jahren per Ende August; die Kündigung trifft am 13.08. ein. c) Markus (6. Dienstjahr) schickt die Kündigung per B-Post (Stempel 29.05.), der Chef erhält sie am 03.06.',
+      model: 'a) <b>7. Juli</b>: Probezeit = 7 Tage Frist (OR 335b Abs. 1), auf jeden Tag.<br>b) <b>30. November</b>: ab dem 10. Dienstjahr 3 Monate auf Ende eines Monats (OR 335c Abs. 1). Ende August ist nicht mehr möglich; ab 13.08. ergeben 3 volle Monate Ende November.<br>c) <b>31. August</b>: 2. bis 9. Dienstjahr = 2 Monate auf Monatsende. Massgebend ist der <b>Empfang</b> (03.06.), nicht der Poststempel → Ende Juni nicht mehr möglich, also Juli + August.' }
+  ]
+});
+</script>
+</body>
+</html>

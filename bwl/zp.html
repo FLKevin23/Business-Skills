@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BWL Probe-Zwischenprüfung | Kap. 1 bis 4</title>
+<link rel="stylesheet" href="../style.css">
+<script src="../js/site.js"></script>
+<script src="../js/quiz.js"></script>
+</head>
+<body data-base="../" data-page="pruefungen">
+
+<div class="page-hero exam">
+  <h1>🎯 BWL Probe-Zwischenprüfung (Kap. 1 bis 4)</h1>
+  <p>Selbst erstellt im Stil der Nullserie, mit neuem Fall. Deckt genau den Stoff der Zwischenprüfung vom Mi 04.11. ab: Umweltsphären, Anspruchsgruppen, Gliederung der Betriebe, Leitbild/Konzept, Bedürfnisse, Güter.</p>
+  <div class="hero-meta"><span>⏱ 50 Minuten</span><span>50 Punkte</span><span>🎯 Ziel: 40+ (= 80 %)</span></div>
+</div>
+
+<div class="container">
+  <div class="section-block">
+    <div class="block-header bwl">📰 Ausgangslage: Rheintal Bikes AG (fiktiv)</div>
+    <div class="block-body">
+      <p>Die <b>Rheintal Bikes AG</b> in Altstätten SG baut seit 1998 hochwertige <b>E-Mountainbikes</b>. Gründerin Sandra Keel hält 60 % der Aktien, 40 % gehören einer Investorengruppe aus Zürich. Die Firma beschäftigt <b>85 Mitarbeitende</b> und macht CHF 31 Mio. Umsatz, davon 55 % im Export nach Deutschland und Österreich.</p>
+      <p>Die Velos werden in Altstätten montiert; Rahmen und Akkus kommen aus Asien. Seit dem Corona-Boom ist die Nachfrage eingebrochen, die Lager sind voll und asiatische Direktanbieter verkaufen online bis 30 % günstiger. Gleichzeitig wächst die Nachfrage nach Velo-<b>Abos</b> und Service. Die Investoren fordern eine Dividende von 8 %; Keel möchte lieber in eine eigene Akku-Recycling-Anlage und in Lehrstellen investieren. Die Gemeinde Altstätten wünscht sich mehr Arbeitsplätze, die Anwohner klagen über Lieferwagenverkehr.</p>
+    </div>
+  </div>
+  <div id="exam"></div>
+</div>
+
+<script>
+Quiz.mount('#exam', {
+  id: 'bwl-zp', title: 'Probe-ZP BWL · 50 Punkte', exam: true, minutes: 50,
+  questions: [
+    { num: 'Aufgabe 1', type: 'tf', pts: 8, q: 'Richtig oder falsch?', items: [
+      { s: 'Die Rheintal Bikes AG ist ein Grossunternehmen.', a: false, why: '85 Mitarbeitende = mittleres Unternehmen (50 bis 249).' },
+      { s: 'Die Firma gehört zum sekundären Wirtschaftssektor.', a: true, why: 'Montage = Verarbeitung.' },
+      { s: 'Die Rheintal Bikes AG ist ein gemischtwirtschaftliches Unternehmen.', a: false, why: 'Gründerin + private Investoren = privat. Gemischtwirtschaftlich nur mit Beteiligung der öffentlichen Hand.' },
+      { s: 'Die AG ist eine juristische Person.', a: true },
+      { s: 'Die asiatischen Direktanbieter sind eine Anspruchsgruppe (Konkurrenz).', a: true },
+      { s: 'Der starke Franken ist ein Trend der Umweltsphäre Gesellschaft.', a: false, why: 'Wechselkurse = Umweltsphäre Wirtschaft.' },
+      { s: 'Ein E-Bike, das ein Kurierdienst für Auslieferungen kauft, ist für ihn ein Investitionsgut.', a: true, why: 'Er nutzt es mehrfach, um seine Dienstleistung zu erbringen.' },
+      { s: 'Die Grundstrategie der Firma sollte auf der Website veröffentlicht werden, damit Kunden sie kennen.', a: false, why: 'Grundstrategie = nur nach innen. Öffentlich ist das Leitbild.' }
+    ] },
+    { num: 'Aufgabe 2', type: 'open', pts: 6, q: 'Nennen Sie zwei Umweltsphären und je einen konkreten Trend, der die Rheintal Bikes AG betrifft. Erklären Sie kurz die Auswirkung.', hint: '1 P. Sphäre + 2 P. Trend mit Auswirkung',
+      model: '<b>Wirtschaft:</b> Nachfrage nach dem Corona-Boom eingebrochen + Preisdruck durch asiatische Online-Anbieter → volle Lager, sinkende Margen. Oder: starker Franken verteuert den Export (55 % Exportanteil).<br><b>Gesellschaft:</b> Trend vom Besitzen zum Nutzen (Abos, Sharing) → neues Geschäftsmodell nötig. Oder: Gesundheits- und Umweltbewusstsein → E-Bike als Alternative zum Auto.<br><b>Technologie:</b> bessere/leichtere Akkus, Online-Direktvertrieb. <b>Natur:</b> Akku-Rohstoffe knapp, Recyclingpflichten.' },
+    { num: 'Aufgabe 3', type: 'open', pts: 6, q: 'Nennen Sie drei Anspruchsgruppen aus dem Fall und je ein Ziel.',
+      model: '<b>Kapitalgeber (Investoren):</b> 8 % Dividende. <b>Gründerin/Unternehmensleitung:</b> Investitionen in Recycling und Lehrstellen, langfristige Entwicklung. <b>Staat/Gemeinde:</b> mehr Arbeitsplätze und Steuern. <b>Öffentlichkeit/Anwohner:</b> weniger Verkehr und Lärm. <b>Kunden:</b> günstige Preise, Service, Abo-Modelle. (je 1 P. Gruppe + 1 P. Ziel)' },
+    { num: 'Aufgabe 4', type: 'open', pts: 3, q: 'Beschreiben Sie einen Zielkonflikt aus dem Fall genau.',
+      model: 'Die Investoren wollen eine Dividende von 8 %, also möglichst viel Gewinn ausschütten. Die Gründerin will den Gewinn in eine Recycling-Anlage und Lehrstellen investieren. Was ausgeschüttet wird, kann nicht investiert werden, und umgekehrt → Zielkonflikt Kapitalgeber ↔ Unternehmensleitung.<br>Auch gut: Gemeinde will mehr Arbeitsplätze (= mehr Betrieb), Anwohner wollen weniger Lieferverkehr.' },
+    { num: 'Aufgabe 5', type: 'match', pts: 3, q: 'Welche Zielbeziehung?', choices: ['Zielkonflikt', 'Zielharmonie', 'Zielneutralität'], items: [
+      { s: 'Gemeinde will Steuereinnahmen, Aktionäre wollen hohen Gewinn', a: 'Zielharmonie' },
+      { s: 'Kunden wollen tiefe Preise, Mitarbeitende höhere Löhne', a: 'Zielkonflikt' },
+      { s: 'Konkurrenz will fairen Wettbewerb, Kunden wollen guten Service', a: 'Zielneutralität' }
+    ] },
+    { num: 'Aufgabe 6', type: 'open', pts: 5, q: 'Ein Mitarbeiter will sich als Velomechaniker selbständig machen. Er schwankt zwischen Einzelunternehmen und GmbH. Vergleichen Sie Gründungskapital und Haftung und geben Sie eine Empfehlung.',
+      model: '<b>Einzelunternehmen:</b> kein Mindestkapital, einfache Gründung; Inhaber haftet mit Geschäfts- <em>und</em> Privatvermögen (2 P.).<br><b>GmbH:</b> CHF 20\'000 Stammkapital; Haftung nur mit dem Gesellschaftsvermögen (2 P.).<br><b>Empfehlung</b> mit Begründung (1 P.), z.B.: Für einen kleinen Start mit wenig Risiko Einzelfirma; mit Investitionen in Werkstatt und Lager eher GmbH wegen beschränkter Haftung.' },
+    { num: 'Aufgabe 7', type: 'open', pts: 3, q: 'Erklären Sie den Unterschied zwischen Leitbild und Grundstrategie.',
+      model: '<b>Leitbild:</b> schriftliche Erklärung über Werte und Unternehmenszweck, nach innen (Motivation) und aussen (Image) gerichtet, öffentlich. <b>Grundstrategie:</b> langfristiges Vorgehen zur Entwicklung des Unternehmens, nur nach innen für die oberste Führung festgehalten.' },
+    { num: 'Aufgabe 8', type: 'match', pts: 3, q: 'Zu welchem Teil des Unternehmenskonzepts gehört die Aussage?', choices: ['leistungswirtschaftlich', 'finanzwirtschaftlich', 'sozial'], items: [
+      { s: 'Wir bieten ab 2027 ein Velo-Abo mit Service an.', a: 'leistungswirtschaftlich' },
+      { s: 'Wir finanzieren die Recycling-Anlage zu 70 % mit Eigenkapital.', a: 'finanzwirtschaftlich' },
+      { s: 'Wir bilden jedes Jahr 4 Lernende aus.', a: 'sozial' },
+      { s: 'Wir verkaufen 2027 mindestens 12\'000 Velos.', a: 'leistungswirtschaftlich' },
+      { s: 'Wir sind jederzeit zahlungsfähig.', a: 'finanzwirtschaftlich' },
+      { s: 'Wir recyceln 100 % der Altakkus unserer Kunden.', a: 'sozial' }
+    ] },
+    { num: 'Aufgabe 9', type: 'open', pts: 4, q: 'Formulieren Sie zwei konkrete leistungswirtschaftliche Ziele für die Rheintal Bikes AG.', hint: 'Inhalt + Ausmass + Zeit',
+      model: 'Z.B. 1) «Bis Ende 2027 schliessen wir 2\'000 Velo-Abos ab.» 2) «Wir steigern den Marktanteil bei E-Mountainbikes in der Ostschweiz in 3 Jahren von 6 % auf 9 %.» Auch: Lagerbestand bis Mitte 2027 um 40 % senken, Online-Umsatzanteil auf 25 % erhöhen.' },
+    { num: 'Aufgabe 10', type: 'match', pts: 3, q: 'Ordnen Sie die Maslow-Stufen (1 = unterste).', choices: ['1', '2', '3', '4', '5'], items: [
+      { s: 'Soziale Bedürfnisse', a: '3' }, { s: 'Selbstverwirklichung', a: '5' }, { s: 'Existenzbedürfnisse', a: '1' }, { s: 'Wertschätzung', a: '4' }, { s: 'Sicherheit', a: '2' }
+    ] },
+    { num: 'Aufgabe 11', type: 'open', pts: 3, q: 'Erklären Sie den Weg vom Bedürfnis zur Nachfrage am Beispiel eines Kunden, der ein E-Bike kauft.',
+      model: '<b>Bedürfnis:</b> Mangelgefühl, z.B. Wunsch nach bequemer Mobilität zur Arbeit. <b>Bedarf:</b> Bedürfnis + Kaufkraft: Er hat CHF 5\'000 für ein E-Bike. <b>Nachfrage:</b> Er tritt am Markt als Käufer auf und kauft das E-Bike bei Rheintal Bikes (Angebot).' },
+    { num: 'Aufgabe 12', type: 'match', pts: 3, q: 'Güterart bestimmen.', choices: ['Investitionsgut', 'Konsumgut', 'Dienstleistung', 'Recht'], items: [
+      { s: 'Montageroboter in der Fabrik', a: 'Investitionsgut' }, { s: 'Privatperson kauft E-Bike für Freizeittouren', a: 'Konsumgut' },
+      { s: 'Jahresservice des Velos', a: 'Dienstleistung' }, { s: 'Patent auf ein Akkusystem', a: 'Recht' },
+      { s: 'Velo-Versicherung', a: 'Dienstleistung' }, { s: 'Velohelm für den Privatgebrauch', a: 'Konsumgut' }
+    ] }
+  ]
+});
+</script>
+</body>
+</html>
